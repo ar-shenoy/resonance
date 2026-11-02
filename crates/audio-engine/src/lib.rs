@@ -1,19 +1,31 @@
 //! Resonance Audio Engine
-//!
-//! Future home of:
-//! - Device enumeration & selection
-//! - Bit-perfect / exclusive mode paths
-//! - Dual-deck players + shared clock
-//! - Crossfade & transition engine
-//! - DSP effects rack
-//! - Optional stem routing
-//! - MIDI input mapping
 
 #![allow(dead_code)]
 
+pub mod device;
+pub mod mixer;
+pub mod dsp;
+pub mod midi;
+
+pub use device::*;
+pub use mixer::*;
+
+pub fn engine_version() -> &'static str {
+    "0.1.0-scaffold"
+}
+
+pub fn list_devices_placeholder() -> Vec<String> {
+    vec![
+        "System Default".into(),
+        "(Native device list requires cpal + running on host)".into(),
+    ]
+}
+
+#[derive(Debug, Clone)]
 pub struct EngineConfig {
     pub sample_rate: u32,
     pub buffer_size: u32,
+    pub performance_mode: bool,
 }
 
 impl Default for EngineConfig {
@@ -21,10 +33,7 @@ impl Default for EngineConfig {
         Self {
             sample_rate: 44100,
             buffer_size: 512,
+            performance_mode: false,
         }
     }
-}
-
-pub fn engine_version() -> &'static str {
-    "0.1.0-placeholder"
 }
