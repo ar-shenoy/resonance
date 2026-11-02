@@ -6,4 +6,9 @@ description = "Low-latency audio engine for Resonance (playback, mixing, DSP)"
 license = "MIT"
 
 [dependencies]
-# Future: cpal, rodio or miniaudio bindings
+cpal = "0.15"
+thiserror = "1"
+
+[features]
+default = []
+exclusive = []
