@@ -1,0 +1,24 @@
+[package]
+name = "resonance"
+version = "0.1.0"
+description = "Resonance — Local-first intelligent music player"
+authors = ["Adarsh R Shenoy <adarshrshenoy1@gmail.com>"]
+license = "MIT"
+edition = "2021"
+rust-version = "1.75"
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+tauri-plugin-shell = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+resonance-audio-engine = { path = "../crates/audio-engine" }
+resonance-features = { path = "../crates/features" }
+resonance-db = { path = "../crates/db" }
+
+[features]
+default = ["custom-protocol"]
+custom-protocol = ["tauri/custom-protocol"]

@@ -4,6 +4,7 @@ members = [
     "crates/audio-engine",
     "crates/features",
     "crates/db",
+    "src-tauri",
 ]
 default-members = [
     "crates/audio-engine",

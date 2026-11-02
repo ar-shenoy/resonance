@@ -1,6 +1,6 @@
 # Resonance Roadmap
 
-## Phase 1 — Usable Local Player (current prototype)
+## Phase 1 — Usable Local Player
 - [x] Local file import & playback
 - [x] Basic library
 - [x] Transport controls
@@ -8,9 +8,11 @@
 - [x] Dual-deck + Automix foundation
 - [x] Playlists, favorites, history, search
 - [x] Settings + keyboard shortcuts
-- [ ] Cover art & real metadata
-- [ ] Persistent storage (IndexedDB → SQLite)
+- [x] IndexedDB persistence (metadata + user data)
+- [x] Duplicate detection + corrupt file handling
+- [ ] Cover art & real metadata (ID3/Vorbis)
 - [ ] Lyrics view
+- [ ] Full permanent file library (needs native)
 
 ## Phase 2 — Creative Power
 - [ ] Better analysis (beat grid, structure)
@@ -20,17 +22,21 @@
 - [ ] Session export / share cards
 - [ ] Version-aware library (original vs remaster)
 
-## Phase 3 — Native
-- [ ] Tauri 2 desktop shell
-- [ ] Rust audio-engine (device selection, low latency)
+## Phase 3 — Native (scaffolded)
+- [x] Tauri 2 project structure (`src-tauri/`)
+- [x] Rust workspace crates (audio-engine, features, db)
+- [x] Device / mixer / DSP / MIDI module layout
+- [x] Stem separation module placeholder
+- [ ] cpal integration + real device selection
+- [ ] Low-latency playback path
 - [ ] Background playback + system media controls
-- [ ] Performance mode for low-end devices
+- [ ] Performance mode wired to native engine
 - [ ] Optional encrypted sync
 
-## Phase 4 — Advanced
-- [ ] Stem separation (optional local models)
+## Phase 4 — Advanced (designed, not implemented)
+- [ ] Stem separation (optional local ONNX models)
 - [ ] Plugin system
-- [ ] MIDI controller support
+- [ ] MIDI controller support (`midir`)
 - [ ] Room correction / headphone personalization
 - [ ] Spatial / multi-channel
 - [ ] MusicBrainz / Discogs enrichment
