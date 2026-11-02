@@ -1,0 +1,20 @@
+{
+  "name": "resonance",
+  "version": "0.1.0",
+  "description": "Local-first, AI-native music player & intelligent automix engine",
+  "private": true,
+  "license": "MIT",
+  "author": "Adarsh R Shenoy",
+  "scripts": {
+    "dev": "npx serve public -p 5173",
+    "start": "npx serve public -p 5173"
+  },
+  "keywords": [
+    "music-player",
+    "local-first",
+    "automix",
+    "dj",
+    "open-source",
+    "audio"
+  ]
+}

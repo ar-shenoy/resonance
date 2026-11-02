@@ -1,0 +1,16 @@
+[package]
+name = "resonance"
+version = "0.1.0"
+edition = "2021"
+description = "Local-first intelligent music player and automix engine"
+license = "MIT"
+authors = ["Adarsh R Shenoy <adarshrshenoy1@gmail.com>"]
+repository = "https://github.com/ar-shenoy/resonance"
+
+[dependencies]
+# Core audio & analysis will land here (cpal, symphonia, etc.)
+# ONNX Runtime for local feature models
+# sqlx / rusqlite for library database
+
+[workspace]
+# Future: src-tauri, crates/audio-engine, crates/features, etc.

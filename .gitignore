@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+target/
+dist/
+build/
+.DS_Store
+*.log
+.env
+.env.local
+.vscode/
+.idea/
+*.swp
+*.swo
+.cargo/
+*.pdb
+
+# Tauri / Rust
+src-tauri/target/
+src-tauri/Cargo.lock
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Local analysis cache
+.cache/
+*.sqlite
+*.db
+data/
+library/
