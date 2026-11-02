@@ -92,14 +92,23 @@
         </div>
       </section>
 
-      <!-- Library View (placeholder) -->
+      <!-- Library View -->
       <section class="view view-library" id="view-library">
-        <div class="panel glass">
-          <h2>Library</h2>
-          <p class="muted">Local library scanning and smart organization coming next.</p>
-          <div class="empty-state">
+        <div class="library-header">
+          <div>
+            <h2>Library</h2>
+            <p class="muted" id="library-count">0 tracks</p>
+          </div>
+          <div class="library-actions">
+            <button class="mix-btn" id="btn-import">Import Files</button>
+            <input type="file" id="file-input" accept="audio/*,.mp3,.flac,.wav,.aac,.ogg,.m4a,.opus" multiple hidden />
+          </div>
+        </div>
+        <div class="library-list glass" id="library-list">
+          <div class="empty-state" id="library-empty">
             <div class="empty-icon">◈</div>
-            <p>Drop folders or connect a library path to begin.</p>
+            <p>Drop audio files here or click Import</p>
+            <p class="muted" style="margin-top:8px;font-size:13px">Supports MP3, FLAC, WAV, AAC, OGG, M4A</p>
           </div>
         </div>
       </section>
