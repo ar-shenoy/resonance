@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#0a0a0b" />
   <meta name="description" content="Resonance — Local-first intelligent music player" />
   <title>Resonance</title>
-  <link rel="icon" type="image/svg+xml" href="../assets/logo.svg" />
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -23,18 +23,18 @@
 
     <header class="topbar">
       <div class="brand">
-        <img src="../assets/logo.svg" alt="Resonance" class="logo" />
+        <img src="assets/logo.svg" alt="Resonance" class="logo" />
         <span class="wordmark">Resonance</span>
       </div>
       <nav class="nav" role="navigation" aria-label="Main">
-        <button class="nav-item active" data-view="now" aria-current="page">Now</button>
+        <button class="nav-item active" data-view="now">Now</button>
         <button class="nav-item" data-view="library">Library</button>
         <button class="nav-item" data-view="playlists">Playlists</button>
         <button class="nav-item" data-view="mix">Automix</button>
         <button class="nav-item" data-view="session">Session</button>
       </nav>
       <div class="top-actions">
-        <button class="icon-btn" id="search-btn" title="Search ( / )">
+        <button class="icon-btn" id="search-btn" title="Search">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
           </svg>
@@ -72,7 +72,6 @@
               </div>
             </div>
           </div>
-
           <div class="visualizer-panel">
             <canvas id="waveform"></canvas>
             <div class="progress-bar" id="progress-bar">
@@ -83,39 +82,35 @@
               <span id="time-current">0:00</span>
               <span id="time-total">0:00</span>
             </div>
-
             <div class="creative-bar">
-              <div class="hotcues" id="hotcues" aria-label="Hot cues">
+              <div class="hotcues" id="hotcues">
                 <button class="cue-btn" data-cue="1" title="Hot cue 1">1</button>
                 <button class="cue-btn" data-cue="2" title="Hot cue 2">2</button>
                 <button class="cue-btn" data-cue="3" title="Hot cue 3">3</button>
                 <button class="cue-btn" data-cue="4" title="Hot cue 4">4</button>
               </div>
               <div class="loop-controls">
-                <button class="deck-btn" id="btn-loop-in" title="Loop in">IN</button>
-                <button class="deck-btn" id="btn-loop-out" title="Loop out">OUT</button>
-                <button class="deck-btn" id="btn-loop-toggle" title="Toggle loop">LOOP</button>
+                <button class="deck-btn" id="btn-loop-in">IN</button>
+                <button class="deck-btn" id="btn-loop-out">OUT</button>
+                <button class="deck-btn" id="btn-loop-toggle">LOOP</button>
               </div>
               <div class="pitch-wrap">
                 <label for="pitch-fader">Pitch</label>
-                <input type="range" id="pitch-fader" min="50" max="150" value="100" title="Pitch / tempo %" />
+                <input type="range" id="pitch-fader" min="50" max="150" value="100" />
                 <span id="pitch-value">100%</span>
               </div>
-              <button class="deck-btn" id="btn-lyrics" title="Lyrics">LYRICS</button>
-              <button class="deck-btn" id="btn-export-session" title="Export session">EXPORT</button>
+              <button class="deck-btn" id="btn-lyrics">LYRICS</button>
+              <button class="deck-btn" id="btn-export-session">EXPORT</button>
             </div>
           </div>
         </div>
-
         <div class="lyrics-panel glass" id="lyrics-panel" hidden>
           <div class="lyrics-header">
             <h3>Lyrics</h3>
-            <button class="icon-btn" id="btn-close-lyrics" aria-label="Close lyrics">✕</button>
+            <button class="icon-btn" id="btn-close-lyrics" aria-label="Close">✕</button>
           </div>
-          <div class="lyrics-body" id="lyrics-body">
-            <p class="muted">No lyrics yet. Paste below or add later.</p>
-          </div>
-          <textarea id="lyrics-input" placeholder="Paste lyrics or LRC here…" rows="6"></textarea>
+          <div class="lyrics-body" id="lyrics-body"></div>
+          <textarea id="lyrics-input" rows="6"></textarea>
           <button class="mix-btn" id="btn-save-lyrics">Save lyrics</button>
         </div>
       </section>
@@ -136,8 +131,6 @@
             <div class="empty-icon">◈</div>
             <p>Your library is empty</p>
             <p class="muted" style="margin-top:8px;font-size:13px">Drop audio files here or click Import</p>
-            <p class="muted" style="margin-top:4px;font-size:12px">MP3 · FLAC · WAV · AAC · OGG · M4A</p>
-            <p class="muted" style="margin-top:12px;font-size:12px">Tip: <kbd>/</kbd> search · <kbd>Space</kbd> play · <kbd>F</kbd> favorite</p>
           </div>
         </div>
       </section>
@@ -146,22 +139,19 @@
         <div class="mix-layout">
           <div class="deck deck-a glass" id="deck-a">
             <div class="deck-label">A</div>
-            <div class="deck-artwork" id="deck-a-art"></div>
             <div class="deck-info">
               <div class="deck-title" id="deck-a-title">Deck A</div>
               <div class="deck-meta" id="deck-a-meta">Ready</div>
             </div>
             <div class="deck-features" id="deck-a-features">
-              <span class="tag">— BPM</span>
-              <span class="tag">—</span>
+              <span class="tag">— BPM</span><span class="tag">—</span>
             </div>
             <div class="deck-controls">
-              <button class="deck-btn" id="deck-a-load" title="Load current track">LOAD</button>
+              <button class="deck-btn" id="deck-a-load">LOAD</button>
               <button class="deck-btn primary" id="deck-a-play">PLAY</button>
             </div>
-            <input type="range" min="0" max="100" value="80" class="deck-vol" id="deck-a-vol" title="Deck A volume" />
+            <input type="range" min="0" max="100" value="80" class="deck-vol" id="deck-a-vol" />
           </div>
-
           <div class="mixer glass">
             <div class="crossfader-wrap">
               <input type="range" min="0" max="100" value="50" class="crossfader" id="crossfader" />
@@ -173,23 +163,20 @@
             </div>
             <div class="mix-status" id="mix-status">Ready</div>
           </div>
-
           <div class="deck deck-b glass" id="deck-b">
             <div class="deck-label">B</div>
-            <div class="deck-artwork" id="deck-b-art"></div>
             <div class="deck-info">
               <div class="deck-title" id="deck-b-title">Deck B</div>
               <div class="deck-meta" id="deck-b-meta">Ready</div>
             </div>
             <div class="deck-features" id="deck-b-features">
-              <span class="tag">— BPM</span>
-              <span class="tag">—</span>
+              <span class="tag">— BPM</span><span class="tag">—</span>
             </div>
             <div class="deck-controls">
-              <button class="deck-btn" id="deck-b-load" title="Load current track">LOAD</button>
+              <button class="deck-btn" id="deck-b-load">LOAD</button>
               <button class="deck-btn primary" id="deck-b-play">PLAY</button>
             </div>
-            <input type="range" min="0" max="100" value="80" class="deck-vol" id="deck-b-vol" title="Deck B volume" />
+            <input type="range" min="0" max="100" value="80" class="deck-vol" id="deck-b-vol" />
           </div>
         </div>
       </section>
@@ -208,7 +195,6 @@
           <div class="empty-state" id="playlist-empty">
             <div class="empty-icon">♫</div>
             <p>No playlists yet</p>
-            <p class="muted" style="margin-top:8px;font-size:13px">Create one and add tracks from your library</p>
           </div>
         </div>
       </section>
@@ -217,14 +203,13 @@
         <div class="library-header">
           <div>
             <h2>Session & History</h2>
-            <p class="muted">Recently played and mix history</p>
+            <p class="muted">Recently played</p>
           </div>
         </div>
         <div class="library-list glass" id="history-list">
           <div class="empty-state" id="history-empty">
             <div class="empty-icon">◎</div>
             <p>Nothing played yet</p>
-            <p class="muted" style="margin-top:8px;font-size:13px">Play tracks to build your history</p>
           </div>
         </div>
       </section>
@@ -235,24 +220,19 @@
           <div class="setting-group">
             <label class="setting-label">Performance Mode</label>
             <p class="setting-desc">Skip heavy analysis on low-end devices</p>
-            <label class="toggle">
-              <input type="checkbox" id="setting-perf-mode" />
-              <span class="toggle-track"></span>
-            </label>
+            <label class="toggle"><input type="checkbox" id="setting-perf-mode" /><span class="toggle-track"></span></label>
           </div>
           <div class="setting-group">
             <label class="setting-label">Accent Theme</label>
-            <p class="setting-desc">Choose the highlight color</p>
             <div class="theme-swatches">
-              <button class="swatch active" data-accent="amber" style="background:#f5a623" title="Amber"></button>
-              <button class="swatch" data-accent="violet" style="background:#8b5cf6" title="Violet"></button>
-              <button class="swatch" data-accent="cyan" style="background:#06b6d4" title="Cyan"></button>
-              <button class="swatch" data-accent="rose" style="background:#f43f5e" title="Rose"></button>
+              <button class="swatch active" data-accent="amber" style="background:#f5a623"></button>
+              <button class="swatch" data-accent="violet" style="background:#8b5cf6"></button>
+              <button class="swatch" data-accent="cyan" style="background:#06b6d4"></button>
+              <button class="swatch" data-accent="rose" style="background:#f43f5e"></button>
             </div>
           </div>
           <div class="setting-group">
             <label class="setting-label">Context Mode</label>
-            <p class="setting-desc">Influences future recommendations & automix</p>
             <select id="setting-context" class="setting-select">
               <option value="neutral">Neutral</option>
               <option value="focus">Focus</option>
@@ -261,25 +241,13 @@
               <option value="winddown">Wind-down</option>
             </select>
           </div>
-          <div class="setting-group">
-            <label class="setting-label">Keyboard Shortcuts</label>
-            <div class="shortcuts-list">
-              <div><kbd>Space</kbd> Play / Pause</div>
-              <div><kbd>←</kbd> <kbd>→</kbd> Seek ±5s</div>
-              <div><kbd>N</kbd> Next track</div>
-              <div><kbd>P</kbd> Previous track</div>
-              <div><kbd>/</kbd> Focus search</div>
-              <div><kbd>F</kbd> Toggle favorite</div>
-              <div><kbd>1-4</kbd> Switch views</div>
-            </div>
-          </div>
         </div>
       </section>
     </main>
 
     <div class="search-overlay" id="search-overlay" hidden>
       <div class="search-box glass">
-        <input type="text" id="search-input" placeholder="Search tracks, artists…" autocomplete="off" />
+        <input type="text" id="search-input" placeholder="Search tracks…" autocomplete="off" />
         <div class="search-results" id="search-results"></div>
       </div>
     </div>
@@ -304,12 +272,6 @@
         </div>
       </div>
       <div class="transport-right">
-        <button class="ctrl-btn" id="btn-shuffle" title="Shuffle">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg>
-        </button>
-        <button class="ctrl-btn" id="btn-repeat" title="Repeat">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
-        </button>
         <div class="volume-wrap">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
           <input type="range" min="0" max="100" value="80" class="volume" id="volume" />
