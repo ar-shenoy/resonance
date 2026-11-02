@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  prototype:
+    name: Prototype checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Syntax check (app.js)
+        run: node --check public/app.js
+
+      - name: Ensure required files exist
+        run: |
+          test -f public/index.html
+          test -f public/styles.css
+          test -f public/app.js
+          test -f assets/logo.svg
+          test -f README.md
+          test -f LICENSE
