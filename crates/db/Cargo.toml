@@ -1,0 +1,9 @@
+[package]
+name = "resonance-db"
+version = "0.1.0"
+edition = "2021"
+description = "SQLite persistence layer for Resonance library, playlists, and history"
+license = "MIT"
+
+[dependencies]
+# Future: rusqlite or sqlx

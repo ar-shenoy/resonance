@@ -1,0 +1,9 @@
+[package]
+name = "resonance-features"
+version = "0.1.0"
+edition = "2021"
+description = "Audio feature extraction and analysis for Resonance"
+license = "MIT"
+
+[dependencies]
+# Future: real FFT crates, optional ONNX Runtime

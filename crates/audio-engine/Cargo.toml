@@ -1,0 +1,9 @@
+[package]
+name = "resonance-audio-engine"
+version = "0.1.0"
+edition = "2021"
+description = "Low-latency audio engine for Resonance (playback, mixing, DSP)"
+license = "MIT"
+
+[dependencies]
+# Future: cpal, rodio or miniaudio bindings
